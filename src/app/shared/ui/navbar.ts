@@ -4,7 +4,7 @@ import { AuthStateService } from '../data-access/auth-state.service';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterModule,RouterLink],
+  imports: [RouterModule, RouterLink],
   templateUrl: './navbar.html',
 })
 

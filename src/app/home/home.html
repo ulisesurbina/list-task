@@ -1,19 +1,41 @@
-<mat-card class="example-card" appearance="outlined">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button matButton>LIKE</button>
-    <button matButton>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <section>
+      <div mat-card-avatar class="example-header-image"></div>
+      <p>Nombre de Usuario</p>
+    </section>
+    <div>
+      <button><a routerLink="/home" matButton="tonal">Inicio</a></button>
+      <button><a routerLink="/tasks" matButton="tonal">Mi día a día</a></button>
+      <button><a routerLink="/tasks" matButton="tonal">Importantes</a></button>
+      <button><a routerLink="/tasks" matButton="tonal">Tareas</a></button>
+    </div>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button type="button" matButton (click)="drawer.toggle()">
+      Abrir menú
+    </button>
+    <mat-card class="example-card" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>LisTo-Do</mat-card-title>
+        <mat-card-subtitle>La mejor forma de lograr algo, es haciendo algo para lograrlo. </mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="https://wallpaperaccess.com/full/1489353.jpg"
+        alt="Photo of a Shiba Inu"
+      />
+      <mat-card-content>
+        <p>
+          Esta aplicación le ayudara a manejar sus tareas personales de forma clara y sencilla para lograr sus objetivos. <br>
+          Para poder usar la aplicación es necesario crear una cuenta de usuario con su correo, una vez creada podra agregar y manejar sus tareas personales iniciando sesión con su correo y contraseña.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button routerLink="/auth/sign-up" matButton>Crear cuenta</button>
+        <button routerLink="/auth/sign-in" matButton>Iniciar sesión</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</mat-drawer-container>
